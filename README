@@ -1,0 +1,9 @@
+TweetMeter is a simple web-app that will generate a graph of daily tweet counts
+for a number of keywords.
+
+It's not currently hosted anywhere; I'm just running on my local MAMP install.
+
+It should be pretty easy to deploy onto any PHP web host, but note that:
+
+ * PHP will need CURL running.
+ * PHP needs to be able to write to /tmp
