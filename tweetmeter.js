@@ -71,7 +71,7 @@ function twitterDailyCounts(keyword, numPages, onSuccess) {
 			}
 		}
 
-		if(data.page < numPages) {
+		if(data.next_page && data.page < numPages) {
 			// Recursively work through pages of the search results
 			$.getJSON('ajax-proxy.php?url=http://search.twitter.com/search.json' + data.next_page.replace(/&/g,'%26'), internalResultHandler);
 		} else {
@@ -85,7 +85,7 @@ function twitterDailyCounts(keyword, numPages, onSuccess) {
 	$.getJSON('ajax-proxy.php?url=http://search.twitter.com/search.json?q=' + keyword, internalResultHandler);
 }
 
-	
+$('document').ready(function() {
 	var NUM_PAGES = 30;
 
 	// Set up a graph manager on the placeholder
